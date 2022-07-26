@@ -30,7 +30,7 @@ def details(request,id):
         #   [message_to],
         #   fail_silently=False
         #)
-        messages.success(request,'Thank you'+ message_name +'\n Your message sent successfully')
+        messages.success(request,'Thank you'+ message_name + 'Your message sent successfully')
         return render(request,'details.html',{'Feature': FEATURE})
 
     return render(request,'details.html',{'Feature': FEATURE})
@@ -51,6 +51,10 @@ def properties(request):
 
         if len(request.FILES) != 0:
             pro.image = request.FILES['image']
+        
+        if pro.price <= 1:
+            messages.error(request,'Property should be worth of above 1 crore')
+            return render(request,'properties.html')
 
         pro.save()
         messages.success(request,'Inserted Sucessfully')
