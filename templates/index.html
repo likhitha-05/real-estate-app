@@ -154,8 +154,8 @@
     <div class="box-container">
         {% for a in Agent %}
         <div class="box">
-            <h4><i class="fas fa-envelope"></i>{{a.mail_id}}</h4>
-            <h4><i class="fas fa-phone"></i>{{a.phone}}</h4>
+            <h4><i class="fas fa-envelope"></i><!--{{a.mail_id}}--></h4>
+            <h4><i class="fas fa-phone"></i><!--{{a.phone}}--></h4>
             {% if a.id == 1 %}
             <img src="{% static 'images/pic-1.png' %}" alt="">
             {% elif a.id == 2 %}
