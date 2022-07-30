@@ -52,7 +52,7 @@ def properties(request):
         if len(request.FILES) != 0:
             pro.image = request.FILES['image']
         
-        if pro.price <= 1:
+        if int(pro.price) <= 1:
             messages.error(request,'Property should be worth of above 1 crore')
             return render(request,'properties.html')
 
